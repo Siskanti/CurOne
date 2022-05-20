@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:background="#ECE8E8">
+
+    <ImageView
+        android:id="@+id/gambar1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/gambar1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        />
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gambar1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp"
+        android:fontFamily="@font/poppinssemibold"
+        android:text="CurOne"
+        android:textSize="50dp"
+        android:textColor="@color/black"
+        />
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/poppinssemibold"
+        android:text="Welcome back!!"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        android:textColor="@color/black"
+        />
+
+    <LinearLayout
+        android:id="@+id/edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/text2"
+        android:padding="30dp">
+
+        <EditText
+            android:id="@+id/edit2"
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:background="@drawable/button_shape"
+            android:hint="Enter Your Email"
+            android:paddingLeft="10dp"
+            android:backgroundTint="@color/white"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppinsregular"
+            />
+
+        <EditText
+            android:id="@+id/edit3"
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:background="@drawable/button_shape"
+            android:hint="Enter Your Password"
+            android:paddingLeft="10dp"
+            android:backgroundTint="@color/white"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppinsregular"
+            />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit"
+        android:width="300dp"
+        android:text="Login"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/button_shape"
+        android:layout_centerHorizontal="true"
+        android:textSize="14dp"
+        android:fontFamily="@font/poppinsbold"
+        />
+
+    <ImageView
+        android:id="@+id/gambar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/gambar2"
+        android:layout_marginTop="90dp"
+        />
+
+</RelativeLayout>
