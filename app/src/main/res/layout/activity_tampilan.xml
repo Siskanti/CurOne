@@ -8,22 +8,12 @@
     tools:context=".TampilanActivity"
     android:background="#ECE8E8">
 
-  <ImageView
-      android:id="@+id/gambar1"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:src="@drawable/gambar1"
-      android:layout_alignParentLeft="true"
-      android:layout_alignParentTop="true"
-      />
-
   <TextView
       android:id="@+id/text1"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_below="@+id/gambar1"
       android:layout_centerHorizontal="true"
-      android:layout_marginTop="17dp"
+      android:layout_marginTop="100dp"
       android:fontFamily="@font/poppinssemibold"
       android:text="CurOne"
       android:textSize="50dp"

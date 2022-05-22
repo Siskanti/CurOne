@@ -7,26 +7,35 @@
     tools:context=".EndActivity"
     android:background="#ECE8E8">
 
-    <ImageView
-        android:id="@+id/gambar1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/gambar1"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        />
-
     <TextView
         android:id="@+id/text1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/gambar1"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="100dp"
         android:fontFamily="@font/poppinssemibold"
         android:text="CurOne"
         android:textSize="50dp"
         android:textColor="@color/black"
         />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recyclerview"
+        tools:listitem="@layout/layout_item"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_above="@id/btn_add"
+        android:layout_below="@id/text1"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add new note"
+        android:id="@+id/btn_add"
+        android:textColor="#00B0FF"
+        android:backgroundTint="@color/white"
+        android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>

@@ -55,6 +55,7 @@ public class LoginActivity extends AppCompatActivity {
                     }else{
                         Toast.makeText(getApplicationContext(), "Login gagal", Toast.LENGTH_SHORT).show();
                     }
+
                 }else{
                     Toast.makeText(getApplicationContext(), "Login gagal", Toast.LENGTH_SHORT).show();
                 }
@@ -64,15 +65,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void reload(){
         startActivity(new Intent(getApplicationContext(),TampilanActivity.class));
-    }
-
-    @Override
-    public void onStart(){
-        super.onStart();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
-            reload();
-        }
 
     }
+
 }

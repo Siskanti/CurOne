@@ -81,9 +81,12 @@ public class RegisterActivity extends AppCompatActivity {
                         });
                     }else{
                         Toast.makeText(getApplicationContext(), "Registrasi gagal", Toast.LENGTH_SHORT).show();
+                        progressDialog.dismiss();
                     }
+
                 }else {
                     Toast.makeText(getApplicationContext(), task.getException().getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                    progressDialog.dismiss();
                 }
             }
         });
@@ -93,13 +96,5 @@ public class RegisterActivity extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext(),MenuActivity.class));
     }
 
-    @Override
-    public void onStart(){
-        super.onStart();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
-            reload();
-        }
 
-    }
 }

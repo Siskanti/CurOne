@@ -4,12 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/LENOVO-PC/AndroidStudioProjects/CurOne/app/src/main/res/drawable/button_shape.xml" value="0.1" />
-        <entry key="..\:/Users/LENOVO-PC/AndroidStudioProjects/CurOne/app/src/main/res/layout/activity_end.xml" value="0.184375" />
-        <entry key="..\:/Users/LENOVO-PC/AndroidStudioProjects/CurOne/app/src/main/res/layout/activity_login.xml" value="0.17527173913043478" />
+        <entry key="..\:/Users/LENOVO-PC/AndroidStudioProjects/CurOne/app/src/main/res/layout/activity_end.xml" value="0.10666666666666667" />
+        <entry key="..\:/Users/LENOVO-PC/AndroidStudioProjects/CurOne/app/src/main/res/layout/activity_login.xml" value="0.13333333333333333" />
         <entry key="..\:/Users/LENOVO-PC/AndroidStudioProjects/CurOne/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/LENOVO-PC/AndroidStudioProjects/CurOne/app/src/main/res/layout/activity_menu.xml" value="0.1" />
         <entry key="..\:/Users/LENOVO-PC/AndroidStudioProjects/CurOne/app/src/main/res/layout/activity_register.xml" value="0.13333333333333333" />
         <entry key="..\:/Users/LENOVO-PC/AndroidStudioProjects/CurOne/app/src/main/res/layout/activity_tampilan.xml" value="0.17916666666666667" />
+        <entry key="..\:/Users/LENOVO-PC/AndroidStudioProjects/CurOne/app/src/main/res/layout/layout_item.xml" value="0.1" />
       </map>
     </option>
   </component>
