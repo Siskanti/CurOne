@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MenuActivity"
-    android:background="#ECE8E8">
+    android:background="@drawable/background">
 
     <TextView
         android:id="@+id/text1"
@@ -33,7 +33,7 @@
         android:textColor="@color/black"
         />
 
-    <Button
+    <android.widget.Button
         android:id="@+id/btn_signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -47,7 +47,7 @@
         android:fontFamily="@font/poppinsbold"
         />
 
-    <Button
+    <android.widget.Button
         android:id="@+id/btn_signin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

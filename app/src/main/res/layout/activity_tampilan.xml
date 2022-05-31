@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TampilanActivity"
-    android:background="#ECE8E8">
+    android:background="@drawable/background">
 
   <TextView
       android:id="@+id/text1"
@@ -44,16 +44,16 @@
   <EditText
       android:id="@+id/edit_teks"
       android:layout_width="match_parent"
-      android:layout_height="57dp"
-      android:background="@drawable/button_shape"
+      android:layout_height="200dp"
+      android:background="@color/white"
+      android:textColor="@color/black"
       android:hint="What do you think???"
       android:paddingLeft="10dp"
-      android:backgroundTint="@color/white"
       android:fontFamily="@font/poppinsregular"
       />
   </LinearLayout>
 
-  <Button
+  <android.widget.Button
       android:id="@+id/btn_save"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"

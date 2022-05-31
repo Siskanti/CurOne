@@ -1,8 +1,5 @@
 package com.example.curone;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,13 +7,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
+    private final String TAG = "LoginActivity";
     private EditText editEmail, editPass;
     private Button btn_login;
     private ProgressDialog progressDialog;
@@ -36,36 +36,38 @@ public class LoginActivity extends AppCompatActivity {
         progressDialog.setMessage("Waiting");
         progressDialog.setCancelable(false);
 
-        btn_login.setOnClickListener(v ->{
-            if(editEmail.getText().length()>0 && editPass.getText().length()>0){
+        btn_login.setOnClickListener(v -> {
+            if (editEmail.getText().length() > 0 && editPass.getText().length() > 0) {
                 login(editEmail.getText().toString(), editPass.getText().toString());
-            }else{
+            } else {
                 Toast.makeText(this, "please fill in your data", Toast.LENGTH_SHORT).show();
             }
-                
+
         });
     }
-    private void login(String email, String password){
-        mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+
+    private void login(String email, String password) {
+        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful() && task.getResult()!=null){
-                    if(task.getResult().getUser()!=null){
-                        reload();
-                    }else{
+                if (task.isSuccessful() && task.getResult() != null) {
+                    if (task.getResult().getUser() != null) {
+                        reload(task.getResult().getUser().getEmail());
+                    } else {
                         Toast.makeText(getApplicationContext(), "Login gagal", Toast.LENGTH_SHORT).show();
                     }
 
-                }else{
+                } else {
                     Toast.makeText(getApplicationContext(), "Login gagal", Toast.LENGTH_SHORT).show();
                 }
             }
         });
     }
 
-    private void reload(){
-        startActivity(new Intent(getApplicationContext(),TampilanActivity.class));
-
+    private void reload(String email) {
+        Intent nextActivity = new Intent(getApplicationContext(), TampilanActivity.class);
+        nextActivity.putExtra(TampilanActivity.EMAIL_INTENT, email);
+        startActivity(nextActivity);
     }
 
 }

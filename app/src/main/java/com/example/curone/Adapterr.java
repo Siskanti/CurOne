@@ -37,7 +37,7 @@ public class Adapterr extends RecyclerView.Adapter<Adapterr.MyViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull Adapterr.MyViewHolder holder, int position) {
         final Model data = mList.get(position);
-        holder.edit_teks.setText(data.getPostingan());
+        holder.text1.setText(data.getPostingan());
     }
 
     @Override
@@ -47,11 +47,11 @@ public class Adapterr extends RecyclerView.Adapter<Adapterr.MyViewHolder> {
 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        EditText edit_teks;
+        TextView text1;
         CardView card;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            edit_teks = itemView.findViewById(R.id.edit_teks);
+            text1 = itemView.findViewById(R.id.text1);
             card = itemView.findViewById(R.id.card);
         }
     }

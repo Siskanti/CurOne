@@ -1,8 +1,5 @@
 package com.example.curone;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,38 +7,47 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class TampilanActivity extends AppCompatActivity {
+    private static final String TAG = "TampilanActivity";
+    public static String EMAIL_INTENT = TampilanActivity.TAG + ".EMAIL_INTENT";
+    DatabaseReference database = FirebaseDatabase.getInstance().getReference();
     private EditText editText;
     private Button btnSave;
-    DatabaseReference database = FirebaseDatabase.getInstance().getReference();
-
+    private String email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tampilan);
+        email = getIntent().getStringExtra(TampilanActivity.EMAIL_INTENT);
         editText = findViewById(R.id.edit_teks);
         btnSave = findViewById(R.id.btn_save);
 
+        editText.requestFocus();
 
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String getText = editText.getText().toString();
 
-                if(getText.isEmpty()){
+                if (getText.isEmpty()) {
                     editText.setError("please fill out this form");
-                }else{
-                    database.child("Postingan").push().setValue(new Model(getText)).addOnSuccessListener(new OnSuccessListener<Void>() {
+                } else {
+                    database.child("Postingan").push().setValue(new Model(email, getText)).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void unused) {
                             Toast.makeText(TampilanActivity.this, "Berhasil disimpan", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(TampilanActivity.this, EndActivity.class));
+                            Intent nextActivity = new Intent(getApplicationContext(), EndActivity.class);
+                            nextActivity.putExtra(TampilanActivity.EMAIL_INTENT, email);
+                            startActivity(nextActivity);
                             finish();
                         }
                     }).addOnFailureListener(new OnFailureListener() {
@@ -53,7 +59,6 @@ public class TampilanActivity extends AppCompatActivity {
                 }
             }
         });
-
 
 
     }
